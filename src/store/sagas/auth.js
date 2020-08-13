@@ -45,7 +45,7 @@ export function* authUserSaga(action) {
     );
     yield put(actions.checkAuthTimeout(response.data.expiresIn));
   } catch (error) {
-    put(actions.authFail(error.response.data.error));
+    yield put(actions.authFail(error.response.data.error));
   }
 }
 
